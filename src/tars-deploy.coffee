@@ -23,7 +23,7 @@ execCommand = (msg, cmd) ->
     msg.send stderr if stderr
 
 checkAnsible = "which ansible-playbook"
-exec checkKnife, (error, stdout, stderr) ->
+exec checkAnsible, (error, stdout, stderr) ->
   if stdout == "" or stdout is "ansible-playbook not found"
     console.log "WARN: you don't have ansible-playbook in your $PATH, so this probably won't work....."
 
