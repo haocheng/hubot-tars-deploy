@@ -2,14 +2,15 @@
 #   for deploy tars api/web
 #
 # Configuration:
-#   LIST_OF_ENV_VARS_TO_SET
+#   1. need to have jenkins and specified git repo
+#   2. need to have ssh access to AWS EC2
 #
 # Commands:
-#   hubot hello - <what the respond trigger does>
-#   orly - <what the hear trigger does>
+#   deploy api to <int|production> <release-version> - deploy to tars api
+#   deploy web to <int|production> <release-version> - deploy to tars web
 #
 # Notes:
-#   <optional notes required for the script>
+#   <release-version> need to have corresponding jar/zip file on AWS S3
 #
 # Author:
 #   hclee <hclee@kkbox.com>
