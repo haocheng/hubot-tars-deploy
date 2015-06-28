@@ -6,8 +6,8 @@
 #   2. need to have ssh access to AWS EC2
 #
 # Commands:
-#   deploy api to <int|production> <release-version> - deploy to tars api
-#   deploy web to <int|production> <release-version> - deploy to tars web
+#   hubot deploy api to <int|production> <release-version> - deploy to tars api
+#   hubot deploy web to <int|production> <release-version> - deploy to tars web
 #
 # Notes:
 #   <release-version> need to have corresponding jar/zip file on AWS S3
