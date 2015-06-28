@@ -42,7 +42,7 @@ module.exports = (robot) ->
   robot.respond /deploy web to (int|production) (.*)$/i, (msg) ->
     env = msg.match[1]
     version = msg.match[2]
-    command = "ansible-playbook -v -i /var/lib/jenkins/jobs/tars-web/workspace/vm/int /var/lib/jenkins/jobs/tars-web/workspace/vm/deploy-fe.yml --extra-vars \"release_version=1.0.#{version} release_env=#{env}\""
+    command = "ansible-playbook -v -i /var/lib/jenkins/jobs/tars-web/workspace/deployment/int /var/lib/jenkins/jobs/tars-web/workspace/deployment/deploy-fe.yml --extra-vars \"release_version=1.0.#{version} release_env=#{env}\""
 
     msg.send "deploying tars web to #{env} using version: #{version}"
     execCommand msg, command
