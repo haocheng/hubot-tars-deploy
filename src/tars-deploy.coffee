@@ -32,8 +32,17 @@ module.exports = (robot) ->
 
   robot.respond /deploy api to (int|production) (.*)$/i, (msg) ->
     env = msg.match[1]
-    command = "ansible-playbook -v -i /var/lib/jenkins/jobs/tars-server-deploy-int/workspace/vm/int /var/lib/jenkins/jobs/tars-server-deploy-int/workspace/vm/deploy-api.yml --extra-vars \"release_version=1.0.#{version} release_env=#{env}\""
     version = msg.match[2]
+    command = "ansible-playbook -v -i /var/lib/jenkins/jobs/tars-server/workspace/vm/int /var/lib/jenkins/jobs/tars-server/workspace/vm/deploy-api.yml --extra-vars \"release_version=1.0.#{version} release_env=#{env}\""
 
-    msg.send "deploying: tars-api to #{env}"
+    msg.send "deploying tars api to #{env} using version: #{version}"
+    execCommand msg, command
+
+
+  robot.respond /deploy web to (int|production) (.*)$/i, (msg) ->
+    env = msg.match[1]
+    version = msg.match[2]
+    command = "ansible-playbook -v -i /var/lib/jenkins/jobs/tars-web/workspace/vm/int /var/lib/jenkins/jobs/tars-web/workspace/vm/deploy-api.yml --extra-vars \"release_version=1.0.#{version} release_env=#{env}\""
+
+    msg.send "deploying tars web to #{env} using version: #{version}"
     execCommand msg, command
