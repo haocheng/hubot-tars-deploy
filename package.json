@@ -1,7 +1,7 @@
 {
   "name": "hubot-tars-deploy",
   "description": "for deploy tars api/web",
-  "version": "0.0.5",
+  "version": "0.0.6",
   "author": "hclee <hclee@kkbox.com>",
   "license": "MIT",
 
